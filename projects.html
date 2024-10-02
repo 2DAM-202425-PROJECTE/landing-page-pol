@@ -1,10 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/letter-p-svgrepo-com.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="style.css" rel="stylesheet"/>
+    <script type="module" src="/main.js"></script>
+    <title>Pol Tordera Gil</title>
 </head>
 <body>
+<!--  Inici Header -->
+<header id="header" class="absolute inset-x-0 top-0 z-50" x-data="{menuOpen: false}">
+    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+            <a href="./index.html" class="-m-1.5 p-1.5">
+                <span class="sr-only">Me</span>
+                <img class="h-8 w-auto" src="/letter-p-svgrepo-com.svg"
+                     alt="">
+            </a>
+        </div>
+        <div class="flex lg:hidden">
+            <button type="button"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                    @click="menuOpen=true">
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                     aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+                </svg>
+            </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+            <a href="./index.html#aboutme" class="text-sm font-semibold leading-6 dark:text-white">About Me</a>
+            <a href="./projects.html " class="text-sm font-semibold leading-6 dark:text-white">Projects</a>
+            <a href="./index.html#features" class="text-sm font-semibold leading-6 dark:text-white">Skills</a>
+            <a href="./index.html#contact" class="text-sm font-semibold leading-6 dark:text-white">Contact</a>
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#contact" class="text-sm font-semibold leading-6 text-white">Collaborate <span
+                    aria-hidden="true">&rarr;</span></a>
+        </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div class="lg:hidden" role="dialog" aria-modal="true" x-show="menuOpen">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50"></div>
+        <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Your Company</span>
+                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                         alt="">
+                </a>
+                <button type="button" @click="menuOpen=false" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                         aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="space-y-2 py-6">
+                        <a href="./index.html#aboutme"
+                           class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About
+                            Me</a>
+                        <a href="./projects.html"
+                           class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Projects</a>
+                        <a href="./index.html#features"
+                           class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Skills</a>
+                        <a href="./index.html#contact"
+                           class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
+                    </div>
+                    <div class="py-6">
+                        <a href="./index.html#contact"
+                           class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Collaborate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--  Fi Header -->
 
+<section class="bg-white dark:bg-gray-900">
+    <div class="container px-6 py-10 mx-auto">
+        <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">From the blog</h1>
+
+        <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
+            <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+
+            <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
+                <p class="text-sm text-blue-500 uppercase">category</p>
+
+                <a href="#" class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline dark:text-white">
+                    All the features you want to know
+                </a>
+
+                <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt,
+                    laudantium quia tempore delect
+                </p>
+
+                <a href="#" class="inline-block mt-2 text-blue-500 underline hover:text-blue-400">Read more</a>
+
+                <div class="flex items-center mt-6">
+                    <img class="object-cover object-center w-10 h-10 rounded-full" src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="">
+
+                    <div class="mx-4">
+                        <h1 class="text-sm text-gray-700 dark:text-gray-200">Amelia. Anderson</h1>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Lead Developer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
